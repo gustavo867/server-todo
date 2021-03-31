@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/server.js",
+    "dev": "tsnd --transpile-only --ignore-watch node_modules src/server.ts",
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +19,7 @@
     "knex": "^0.95.4",
     "nodemon": "^2.0.7",
     "pg": "^8.5.1",
+    "sqlite3": "^5.0.2",
     "ts-node-dev": "^1.1.6"
   },
   "devDependencies": {
