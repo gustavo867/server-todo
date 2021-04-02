@@ -43,6 +43,35 @@ export default class TodoControllers {
     }
   }
 
+  async update(req: Request, res: Response) {
+    const { id } = req.query;
+    const { message } = req.body;
+
+    const trx = await db.transaction();
+
+    if (!message) {
+      return res.status(400).json({ message: "Missing message in request" });
+    }
+
+    if (!id) {
+      return res.status(400).json({ message: "Missing id in request" });
+    }
+
+    const todo = await trx("todos").where("id", `${id}`).select("id").first();
+
+    if (todo.id !== Number(id)) {
+      return res.status(401).json({ error: "Operation not permited." });
+    }
+
+    await trx("todos").where("id", `${id}`).update({
+      message: message,
+    });
+
+    await trx.commit();
+
+    return res.status(204).json({ message: "Update with success" });
+  }
+
   async delete(req: Request, res: Response) {
     const { id } = req.query;
     const trx = await db.transaction();

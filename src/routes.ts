@@ -6,6 +6,7 @@ const routes = express();
 const todoController = new TodoController();
 
 routes.get("/todos", todoController.show);
+routes.put("/todos", todoController.update);
 routes.post("/todos", todoController.create);
 routes.delete("/todos", todoController.delete);
 
