@@ -38,8 +38,6 @@ $ yarn run dev
 
 ## V2
 
-## Routes
-
 ```bash
 # Install the dependencies
 $ yarn or npm
@@ -50,6 +48,8 @@ $ yarn typeorm migration:run or npm run typeorm migration:run
 # Start the server
 $ yarn run dev
 ```
+
+## Routes
 
 ```bash
 # /v1/todos or /v2/todos
