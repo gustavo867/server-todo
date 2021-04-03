@@ -11,6 +11,7 @@ Technologies that I used to develop
 - Typescript
 - Knex
 - MySQL
+- TypeOrm
 
 ## 💻 Getting Started
 
@@ -21,6 +22,8 @@ Technologies that I used to develop
 ```
 
 **Follow the steps below**
+
+## V1
 
 ```bash
 # Install the dependencies
@@ -33,9 +36,24 @@ $ yarn run knex:migrate or npm run knex:migrate
 $ yarn run dev
 ```
 
+## V2
+
 ## Routes
 
 ```bash
+# Install the dependencies
+$ yarn or npm
+
+# Run the migrations
+$ yarn typeorm migration:run or npm run typeorm migration:run
+
+# Start the server
+$ yarn run dev
+```
+
+```bash
+# /v1/todos or /v2/todos
+
 # Post
 $ Create Todo
 
