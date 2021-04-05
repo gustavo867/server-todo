@@ -1,8 +1,11 @@
 import { Router } from "express";
 import multer from "multer";
+
 import TodoController from "./v1/controllers/TodoController";
+
 import TodoV2Controller from "./v2/controllers/TodoController";
 import uploadConfig from "./v2/config/upload";
+
 const routes = Router();
 const upload = multer(uploadConfig);
 const todoController = new TodoController();
